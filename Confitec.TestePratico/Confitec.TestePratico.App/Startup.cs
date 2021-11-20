@@ -1,3 +1,4 @@
+using Confitec.TestePratico.Infra.CrossCutting.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Confitec.TestePratico.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Confitec.TestePratico.App
 {
@@ -26,7 +29,7 @@ namespace Confitec.TestePratico.App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<ConfitecContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -37,6 +40,8 @@ namespace Confitec.TestePratico.App
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            CreateDatabase.Create(app);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

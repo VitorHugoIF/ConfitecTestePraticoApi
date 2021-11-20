@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.TestePratico.Domain", "Confitec.TestePratico.Domain\Confitec.TestePratico.Domain.csproj", "{9DFA3138-61E7-4D32-9227-C47DE3FE6CB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.TestePratico.Infrastructure", "Confitec.TestePratico.Infraestructure\Confitec.TestePratico.Infrastructure.csproj", "{CE09F579-9387-4A5B-8ED3-74AC6BE7E035}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.TestePratico.Infra.Data", "Confitec.TestePratico.Infraestructure\Confitec.TestePratico.Infra.Data.csproj", "{CE09F579-9387-4A5B-8ED3-74AC6BE7E035}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.TestePratico.Service", "Confitec.TestePratico.Service\Confitec.TestePratico.Service.csproj", "{7151579F-9484-499E-8EA8-53C9F0725A7D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confitec.TestePratico.App", "Confitec.TestePratico.App\Confitec.TestePratico.App.csproj", "{458A5832-A745-4E0E-99AF-26EC3E83DF07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confitec.TestePratico.Infra.CrossCutting", "Confitec.TestePratico.Infra.CrossCutting\Confitec.TestePratico.Infra.CrossCutting.csproj", "{11986D38-A008-4A81-9988-D2772C1AB71E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{458A5832-A745-4E0E-99AF-26EC3E83DF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{458A5832-A745-4E0E-99AF-26EC3E83DF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{458A5832-A745-4E0E-99AF-26EC3E83DF07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11986D38-A008-4A81-9988-D2772C1AB71E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11986D38-A008-4A81-9988-D2772C1AB71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11986D38-A008-4A81-9988-D2772C1AB71E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11986D38-A008-4A81-9988-D2772C1AB71E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
