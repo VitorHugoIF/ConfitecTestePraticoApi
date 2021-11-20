@@ -57,6 +57,8 @@ namespace Confitec.TestePratico.App
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Confitec.TestePratico v1"));
             }
 
+            app.UseCors(x => x.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
