@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Confitec.TestePratico.Infra.CrossCutting\Confitec.TestePratico.Infra.CrossCutting.csproj" />
+    <ProjectReference Include="..\Confitec.TestePratico.Service\Confitec.TestePratico.Service.csproj" />
   </ItemGroup>
 
 </Project>
