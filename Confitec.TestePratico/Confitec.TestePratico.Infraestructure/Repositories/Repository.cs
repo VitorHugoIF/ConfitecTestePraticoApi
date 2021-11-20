@@ -24,9 +24,9 @@ namespace Confitec.TestePratico.Infra.Data.Repositories
             return await _dbContext.Set<T>().AsNoTracking().ToListAsync();
         }
 
-        public async Task<T> Get(int id, bool asNoTracking = false)
+        public async Task<T> Get(int id, bool isAsNoTracking = false)
         {
-            if (asNoTracking)
+            if (isAsNoTracking)
             {
                 return await _dbContext.Set<T>().AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
             }

@@ -10,7 +10,7 @@ namespace Confitec.TestePratico.Domain.Interfaces.Repository
     public interface IRepository<T> where T : Entity
     {
         Task<IEnumerable<T>> Get();
-        Task<T> Get(int id, bool asNoTracking = false);
+        Task<T> Get(int id, bool isAsNoTracking = false);
         Task<T> Add(T entity);
         Task<T> Update(T entity);
         Task Delete(T entity);

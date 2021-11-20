@@ -13,47 +13,42 @@ namespace Confitec.TestePratico.App.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IAppService<User, UserDto> _appService;
+        private readonly IUserAppService _userAppService;
 
-        public UserController(IAppService<User, UserDto> appService)
+        public UserController(IUserAppService userAppService)
         {
-            _appService = appService;
+            _userAppService = userAppService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _appService.Get());
+            return Ok(await _userAppService.Get());
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await _appService.Get(id));
+            return Ok(await _userAppService.Get(id));
         }
 
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] UserDto userDto)
         {
-            var userDtoResult = await _appService.Add(userDto);
+            var userDtoResult = await _userAppService.Add(userDto);
             return CreatedAtAction(nameof(Get), new { id = userDtoResult.Id }, userDtoResult);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] UserDto userDto)
         {
-            if (id != userDto?.Id)
-            {
-                return BadRequest("Não foi possivel Atualizar");
-            }
-
-            return Ok(await _appService.Update(userDto));
+            return Ok(await _userAppService.Update(id, userDto));
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _appService.Delete(id);
+            await _userAppService.Delete(id);
             return Ok();
         }
     }

@@ -19,9 +19,10 @@ namespace Confitec.TestePratico.Infra.CrossCutting.DependencyInjection
 
         public static void AddServiceDependencyInjectionConfiguration(this IServiceCollection services)
         {
+            //Domain
             services.AddScoped(typeof(IService<>), typeof(Service<>));
-            services.AddScoped(typeof(IAppService<,>), typeof(AppService<,>));
             services.AddScoped<IUserService, UserService>();
+            //Application
             services.AddScoped<IUserAppService, UserAppService>();
         }
 

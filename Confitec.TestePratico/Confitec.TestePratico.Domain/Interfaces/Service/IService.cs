@@ -10,7 +10,7 @@ namespace Confitec.TestePratico.Domain.Interfaces.Service
     public interface IService<T> where T : Entity
     {
         Task<IEnumerable<T>> Get();
-        Task<T> Get(int id, bool asNotracking = false);
+        Task<T> Get(int id, bool isAsNoTracking = false);
         Task<T> Add(T entity);
         Task<T> Update(T entity);
         Task Delete(T entity);

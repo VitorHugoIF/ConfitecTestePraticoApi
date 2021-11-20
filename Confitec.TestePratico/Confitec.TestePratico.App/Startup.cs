@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Confitec.TestePratico.App.Extensions;
 using Confitec.TestePratico.Infra.CrossCutting.DependencyInjection;
 using Confitec.TestePratico.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
@@ -46,9 +47,11 @@ namespace Confitec.TestePratico.App
         {
             CreateDatabase.Create(app);
 
+            app.UseErrorHandler();
+
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Confitec.TestePratico v1"));
             }

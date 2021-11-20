@@ -23,9 +23,9 @@ namespace Confitec.TestePratico.Domain.Services
             return await _repository.Get();
         }
 
-        public async Task<T> Get(int id, bool asNotracking = false)
+        public async Task<T> Get(int id, bool isAsNoTracking = false)
         {
-            return await _repository.Get(id, asNotracking);
+            return await _repository.Get(id, isAsNoTracking);
         }
 
         public async Task<T> Add(T entity)
