@@ -26,12 +26,12 @@ namespace Confitec.TestePratico.App.Extensions
                     if (exceptionHandlerFeature != null)
                     {
                         context.Response.ContentType = "application/json";
-                        var message = "Internal Server Error";
+                        var title = "Internal Server Error";
 
                         if (exceptionHandlerFeature.Error is NotFoundException)
                         {
                             context.Response.StatusCode = (int)HttpStatusCode.NotFound;
-                            message = exceptionHandlerFeature.Error.Message;
+                            title = exceptionHandlerFeature.Error.Message;
                         }
                         else
                         {
@@ -41,9 +41,11 @@ namespace Confitec.TestePratico.App.Extensions
                         var json = new
                         {
                             context.Response.StatusCode,
-                            Message = message,
-                            Detail = exceptionHandlerFeature.Error.StackTrace,
-                        };
+                            Title = title,
+                            TraceId = context.TraceIdentifier,
+                            Type = exceptionHandlerFeature.Error.GetType().Name,
+                            Detail = exceptionHandlerFeature.Error.StackTrace
+                    };
 
                         await context.Response.WriteAsync(JsonConvert.SerializeObject(json));
                     }
