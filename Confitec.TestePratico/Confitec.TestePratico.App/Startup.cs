@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Confitec.TestePratico.Infra.CrossCutting.DependencyInjection;
 using Confitec.TestePratico.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,6 +32,9 @@ namespace Confitec.TestePratico.App
         {
             services.AddDbContext<ConfitecContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
             services.AddControllers();
+            services.AddRepositoryDependencyInjectionConfiguration();
+            services.AddServiceDependencyInjectionConfiguration();
+            services.AddAutomapperDependencyInjectionConfiguration();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Confitec.TestePratico", Version = "v1" });
