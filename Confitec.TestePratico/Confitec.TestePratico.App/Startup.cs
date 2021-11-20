@@ -33,6 +33,7 @@ namespace Confitec.TestePratico.App
         {
             services.AddDbContext<ConfitecContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
             services.AddControllers();
+            services.AddFluentValidationConfiguration();
             services.AddRepositoryDependencyInjectionConfiguration();
             services.AddServiceDependencyInjectionConfiguration();
             services.AddAutomapperDependencyInjectionConfiguration();

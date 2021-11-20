@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Confitec.TestePratico.Infra.CrossCutting.DependencyInjection
 {
-    public static class DependencyInjectionConfig
+    public static class DependencyInjectionExtension
     {
         public static void AddRepositoryDependencyInjectionConfiguration(this IServiceCollection services)
         {
