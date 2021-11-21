@@ -21,6 +21,8 @@ namespace Confitec.TestePratico.Infra.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+            modelBuilder.SeedDatabase();
         }
     }
 }

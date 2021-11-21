@@ -4,14 +4,16 @@ using Confitec.TestePratico.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Confitec.TestePratico.Infra.Data.Migrations
 {
     [DbContext(typeof(ConfitecContext))]
-    partial class ConfitecContextModelSnapshot : ModelSnapshot
+    [Migration("20211121200422_SeedDatabase")]
+    partial class SeedDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
